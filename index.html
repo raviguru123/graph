@@ -3,14 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/c3.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/jquery.min.js"></script>
+		<script src="lib/bootstrap.min.js"></script>
+	<script src="lib/angular-ui-router.min.js"></script>
 	<script src="lib/d3.v3.min.js" charset="utf-8"></script>
 	<script src="lib/c3.js"></script>
 	<script src="js/index.js"></script>
 </head>
-<body>
+<body ng-app="myapp" ng-controller="MyController" style="margin-top:20px">
 <label>Graph for Analytics</label>
-<input type="button" name="show" value="show">
-<input type="button" name="hide" value="hide">
+<input type="button" id="btnshow" value="show" class="btn-primary"/>
+<input type="button" id="btnhide" value="hide" class="btn-primary"/>
 <div id="chart"></div>
 </body>
 </html>
