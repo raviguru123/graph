@@ -8,15 +8,44 @@ var chart = c3.generate({
         ['data2', 50, 20, 10, 40, 15, 25]
       ],
       axes: {
-        data2: 'y2' // ADD
+        data2: 'y2'
+      },
+      types:{
+      	data2:'bar'
       }
     },
     axis: {
+      y: {
+      	show:true,
+        label: { // ADD
+          text: 'Y Label',
+          position: 'outer-middle'
+        }
+      },
       y2: {
-        show: true // ADD
+        show: true,
+        label: { // ADD
+          text: 'Y2 Label',
+          position: 'outer-middle'
+        }
       }
     }
 });
+
+setTimeout(function(){
+	chart.unload({
+    ids: ['data2']
+});
+},3000)
+
+setTimeout(function(){
+chart.load({
+  columns: [
+    ['data1', 300, 100, 250, 150, 300, 150, 500],
+    ['data2', 100, 200, 150, 50, 100, 250]
+  ]
+});
+},6000);
 
 });
 
